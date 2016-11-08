@@ -9,8 +9,15 @@ module.exports = {
     module: {
         loaders:[{
             test: /\.jsx?$/,
-            loader:"babel-loader"
+            loader:"babel-loader",
+            exclude: /node_modules/
         }]
+    },
+    resolve: {
+        alias: {
+            'react':'preact-compat',
+            'react-dom':'preact-compat'
+        }
     },
     plugins:[new HtmlWebpackPlugin()]
 }
