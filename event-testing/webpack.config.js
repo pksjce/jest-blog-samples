@@ -19,7 +19,5 @@ module.exports = {
             'react-dom':'preact-compat'
         }
     },
-    plugins:[new HtmlWebpackPlugin({
-        template: './assets/index.html'
-    })]
+    plugins:[new HtmlWebpackPlugin()]
 }

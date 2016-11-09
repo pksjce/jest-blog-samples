@@ -92,7 +92,7 @@
 	exports.default = App;
 
 
-	(0, _reactDom.render)(_react2.default.createElement(App, null), document.body);
+	(0, _reactDom.render)(_react2.default.createElement(App, null), document.getElementById('root'));
 
 /***/ },
 /* 1 */
