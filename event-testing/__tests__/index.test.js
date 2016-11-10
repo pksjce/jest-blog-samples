@@ -4,8 +4,17 @@ import {shallow} from 'enzyme';
 
 
 describe('The main app', () => {
+    let app;
+    beforeEach(() => {
+        app  = shallow(<App/>);
+    })
     it('the app should have text', () => {
-        const app  = shallow(<App/>);
-        expect(app.contains(<div>This is in react</div>)).toBe(true);
+        expect(app.text()).toBe("This is in react");
+    })
+    it ('should change text on click', () => {
+        app.simulate('click');
+        expect(app.text()).toBe("This has been clicked");
+        app.simulate('click');
+        expect(app.text()).toBe("This is in react");
     })
 })

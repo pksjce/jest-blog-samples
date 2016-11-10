@@ -72,7 +72,13 @@
 	    function App() {
 	        _classCallCheck(this, App);
 
-	        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+	        var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
+
+	        _this.state = {
+	            clicked: false
+	        };
+	        _this.handleClick = _this.handleClick.bind(_this);
+	        return _this;
 	    }
 
 	    _createClass(App, [{
@@ -80,9 +86,16 @@
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
-	                null,
-	                'This is in react'
+	                { onClick: this.handleClick },
+	                this.state.clicked ? "This has been clicked" : "This is in react"
 	            );
+	        }
+	    }, {
+	        key: 'handleClick',
+	        value: function handleClick() {
+	            this.setState({
+	                clicked: !this.state.clicked
+	            });
 	        }
 	    }]);
 
